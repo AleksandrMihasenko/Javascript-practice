@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* global styles */
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: rgb(238, 243, 247);
+    color: rgb(16, 42, 66);
+    line-height: 1.5;
+    font-size: 0.8rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Roboto", sans-serif;
+    text-transform: capitalize;
+    line-height: 1.25;
+    letter-spacing: 0.25rem;
+    margin-bottom: 0.75rem;    
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 0.875rem;
+}
+
+/* global classes */
+
+.btn {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    background: transparent;
+    color: #222;
+    width: 160px;
+    padding: 8px 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    letter-spacing: 0.25rem;
+    display: inline-block;
+    font-weight: 700;
+    transition: all 0.3s linear;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #222;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    color: white;
+    background: #222;
+}
+
+.navigation {
+    background: white;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav h4 {
+    color: rgb(73, 166, 233);    
+    margin: 0;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.nav-center {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul {
+    display: flex;    
+}
+
+ul li {
+    padding: 0px 10px;
+}
+
+nav a {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgb(19, 72, 109);
+    letter-spacing: 0.25rem;
+}
+
+nav a:hover {
+    color: rgb(73, 166, 233);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;    
+    text-align: center;    
+}
+
+.container h2 {
+    height: 70px;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding-top: 15px;
+    background: #222;
+    color: white;  
+    border-radius: 10px;  
+}
+
+.color {
+    color: rgb(73, 166, 233);
+}
