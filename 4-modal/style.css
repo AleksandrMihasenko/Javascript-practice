@@ -1,0 +1,47 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background: url('./background.jpeg') center/cover no-repeat;   
+}
+
+.modal {
+    width: 400px;
+    height: 150px;
+    margin: 350px auto;
+    background-color: rgb(243, 247, 247);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.modal-header {
+    padding-top: 15px;
+    font-size: 24px;
+}
+
+.modal-open {
+    margin-top: 30px;
+    text-transform: uppercase;
+    background: rgb(73, 166, 233);
+    color: rgb(255, 255, 255);
+    padding: 8px 15px;
+    letter-spacing: 1.5;
+    display: inline-block;
+    transition: all 0.3s linear;
+    border: 2px solid rgb(73, 166, 233);
+    font-size: 16px;    
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+ }
+
+ .modal-open:hover {
+    background: rgb(255, 255, 255);
+    border: 2px solid rgb(73, 166, 233);
+    color: rgb(73, 166, 233);
+ }
