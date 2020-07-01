@@ -64,13 +64,48 @@ const menu = [
       img: "./images/item-9.jpeg",
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
+    {
+      id: 10,
+      title: "steak dinner",
+      category: "dinner",
+      price: 39.99,
+      img: "./images/item-10.jpeg",
+      desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    },
 ];
 
 const menuItems = document.querySelector('.menu-items');
+const filterButtons = document.querySelectorAll('.filter-button');
 
+//load items
 window.addEventListener('DOMContentLoaded', () => {
+    displayMenuItems(menu);
+    
+});
 
-    let disolayMenu = menu.map(item => {
+//filter items
+filterButtons.forEach(item => {
+    item.addEventListener('click', event => {
+        const category = event.currentTarget.dataset.id;
+
+        const menuCategory = menu.filter(menuItem => {
+            // console.log(menuItem.category);
+            if (menuItem.category === category) {
+                return menuItem;
+            }            
+        });
+
+        if (category === 'all') {
+            displayMenuItems(menu);
+        } else {
+            displayMenuItems(menuCategory);
+        }
+        // console.log(menuCategory);
+    });
+});
+
+function displayMenuItems(items) {
+    let disolayMenu = items.map(item => {
         return `            
             <article>
                 <div class="menu-item-column">
@@ -89,4 +124,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
     disolayMenu = disolayMenu.join('');
     menuItems.innerHTML = disolayMenu;
-});
+}
