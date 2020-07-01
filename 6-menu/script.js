@@ -75,33 +75,13 @@ const menu = [
 ];
 
 const menuItems = document.querySelector('.menu-items');
-const filterButtons = document.querySelectorAll('.filter-button');
+const buttonsContainer = document.querySelector('.buttons-container');
+
 
 //load items
 window.addEventListener('DOMContentLoaded', () => {
     displayMenuItems(menu);
-    
-});
-
-//filter items
-filterButtons.forEach(item => {
-    item.addEventListener('click', event => {
-        const category = event.currentTarget.dataset.id;
-
-        const menuCategory = menu.filter(menuItem => {
-            // console.log(menuItem.category);
-            if (menuItem.category === category) {
-                return menuItem;
-            }            
-        });
-
-        if (category === 'all') {
-            displayMenuItems(menu);
-        } else {
-            displayMenuItems(menuCategory);
-        }
-        // console.log(menuCategory);
-    });
+    displayMenuButtons();
 });
 
 function displayMenuItems(items) {
@@ -124,4 +104,41 @@ function displayMenuItems(items) {
 
     disolayMenu = disolayMenu.join('');
     menuItems.innerHTML = disolayMenu;
+}
+
+function displayMenuButtons() {
+    const categories = menu.reduce((values, item) => {
+        if (!values.includes(item.category)) {
+            values.push(item.category);
+        }
+        return values;
+    }, ['all']);
+
+    const categoryButtons = categories.map(category => {
+        return `
+            <button type="button" class="filter-button" data-id=${category}>${category}</button>
+        `;
+    }).join('');
+
+    buttonsContainer.innerHTML = categoryButtons;
+    const filterButtons = buttonsContainer.querySelectorAll('.filter-button');
+
+    //filter items
+    filterButtons.forEach(item => {
+        item.addEventListener('click', event => {
+            const category = event.currentTarget.dataset.id;
+
+            const menuCategory = menu.filter(menuItem => {            
+                if (menuItem.category === category) {
+                    return menuItem;
+                }            
+            });
+
+            if (category === 'all') {
+                displayMenuItems(menu);
+            } else {
+                displayMenuItems(menuCategory);
+            }        
+        });
+    });
 }
