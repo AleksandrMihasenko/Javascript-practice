@@ -1,0 +1,100 @@
+/* reset style */
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: rgb(241, 245, 248);
+    color: rgb(16, 42, 66);
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.header {
+    min-height: 100vh;
+    position: relative;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+h1 {
+    color: rgb(255, 255, 255);    
+    font-size: 60px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+.switch-button {
+    align-self: flex-end;
+    position: absolute;
+    left: 7%;
+    bottom: 7%;
+    width: 150px;
+    height: 40px;    
+    border-radius: 10px;
+    background: rgb(73, 166, 233);
+    transition: all 0.3s linear;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+}
+
+.switch-button span {
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: rgb(220, 226, 230);
+}
+
+.switch {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: block;
+    transition: all 0.3s linear;
+    background: rgb(73, 166, 233);
+    border-radius: 10px;
+}
